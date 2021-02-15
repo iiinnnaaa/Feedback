@@ -12,6 +12,7 @@ $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
 
 //Display the routing table
+
 echo '<pre>';
 //    var_dump($router->getParams());
 echo htmlspecialchars(print_r($router->getRoutes(), true));
