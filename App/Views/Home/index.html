@@ -3,24 +3,21 @@
 {% block title %} Home {% endblock %}
 
 {% block body %}
-<!--<h1>Hello,&nbsp;{{ name }} !</h1>-->
-<!--<p>Colors</p>-->
 
-<!--<ul>-->
-<!--	{% for color in colors %}-->
-<!--	<li>{{ color }}</li>-->
-<!--	{% endfor %}-->
-<!--</ul>-->
+<h1>Send Feedback</h1>
 
-<h1>Messages</h1>
-
-<ul>
-	{% for message in messages %}
-	<h2>{{ message.firstname }}</h2>
-	<h2>{{ message.lastname }}</h2>
-	<h2>{{ message.email }}</h2>
-	<h2>{{ message.message }}</h2>
-	{% endfor %}
-</ul>
+<form action="/messages/add" method="POST">
+	<input type="text" name="firstname" placeholder="First Name" Required>
+	<br/>	<br>
+	<input type="text" name="lastname" placeholder="Last Name" Required>
+	<br/>	<br>
+	<input type="email" name="email" placeholder="Enter your email" Required>
+	<br>
+	<br>
+	<label for="feedback">Your message</label><br>
+	<textarea id="feedback" name="feedback" rows="5" cols="33"></textarea>
+	<br><br>
+	<input type="submit" name="submit" value="Submit">
+</form>
 
 {% endblock %}

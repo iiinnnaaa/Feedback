@@ -4,14 +4,14 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Message;
+use Core\Model;
 
-class Messages extends \Core\Controller{
+
+class Messages extends \Core\Controller {
 
   //Show the index page
   //fill user data
   public function indexAction(){
-//    echo "messages controller index action";
-//    echo '<p>Query string parameters: <pre>' .htmlspecialchars(print_r($_GET, true)) .'</pre></p>';
   $messages = Message::getAll();
 
   View::renderTemplate('Messages/index.html', [
@@ -24,16 +24,47 @@ class Messages extends \Core\Controller{
     //+validate
   }
 
-  //edit messages
-  public function editAction(){
-//    echo "edit action";
-    echo '<p>Query string parameters: <pre>' .htmlspecialchars(print_r($this->route_params, true)) .'</pre></p>';
+  public function addAction(){
+    $database = Model::getDB();
+
+    if(isset($_POST['submit'])){
+      $firstname = $_POST['firstname'];
+      $lastname = $_POST['lastname'];
+      $email = $_POST['email'];
+      $message = $_POST['feedback'];
+      $insert = $database->query("INSERT INTO `messages`( `firstname`, `lastname`, `email`, `message`)
+                                       VALUES ('$firstname', '$lastname', '$email', '$message')");
+
+      if($insert){
+//        echo 'data added successfully';
+        View::renderTemplate('Messages/add.html');
+
+      } else {
+        echo "error.something went wrong";
+      }
+    }
+  }
+
+
+
+
+  public function viewAction(){
+//view messages
 
   }
 
   public function deleteAction(){
-    //    echo "delete action";
-  //echo '<p>Query string parameters: <pre>' .htmlspecialchars(print_r($this->route_params, true)) .'</pre></p>';
+    $database = Model::getDB();
 
+    if(isset($_POST['submit'])){
+
+//      $delete = $database->query("DELETE FROM `messages` WHERE `id` =  ");
+
+      if($delete){
+//                echo 'data deleted successfully';
+      } else {
+        echo "error.something went wrong";
+      }
+    }
   }
 }
