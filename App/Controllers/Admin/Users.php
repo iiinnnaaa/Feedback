@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers\Admin;
 
+use Core\View;
+
 class Users extends \Core\Controller{
 
   protected function before(){
@@ -14,8 +16,7 @@ class Users extends \Core\Controller{
 
 
   public function indexAction(){
-    //redirect to messages page
-    echo 'redirect';
+//    View::renderTemplate('login.html');
   }
 
 }

@@ -8,10 +8,19 @@
 <ul>
 	{% for message in messages %}
 	<hr>
-	<h2>{{ message.firstname }} {{ message.lastname }} <i><input type="submit" name="delete" value="Delete"></i></h2>
+	<form action="/messages/delete" method="POST">
+		<input type="hidden" name="id" value="{{ message.id }}">
+	<h2>{{ message.firstname }} {{ message.lastname }} <h5>{{ message.sent_at }}</h5>
+		<input type="submit"  formaction="/messages/view"   name="view" value="View">
+		<input type="submit" name="delete" value="Delete"></h2>
 	<h2>{{ message.email }}</h2>
-	<h4>{{ message.message }}</h4>
+	<h4>{% if message.message|length > 350 %}
+		{{ message.message|slice(0, 350) }}
+		{% else %}
+		{{ message.message }}
+		{% endif %}</h4>
 	<hr>
+	</form>
 	{% endfor %}
 </ul>
 

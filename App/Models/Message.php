@@ -19,6 +19,16 @@ class Message extends \Core\Model {
 
     } catch (\PDOException $e){
       echo $e->getMessage();
-    };
+    }
+  }
+
+  public static function getItem($id){
+    $db = static::getDB();
+
+    $item = $db->query("SELECT `id`, `firstname`, `lastname`, `email`, `message`, `sent_at` FROM `messages` WHERE `id` = $id");
+
+    $res = $item->fetchAll(PDO::FETCH_ASSOC);
+
+    return $res;
   }
 }
