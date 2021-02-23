@@ -1,22 +1,38 @@
 <?php
 namespace App\Controllers\Admin;
 
-use Core\View;
-
+use \Core\View;
+use App\Models\Admin;
+use App\Models\Message;
+use Core\Model;
 class Users extends \Core\Controller{
 
-  protected function before(){
-    //check admin
-      echo '(before) ';
-      //    if ( ! isset($_SESSION["user_id"])) {
-      //      return false;
-      //    }
-      //   return false; //if admin isn't logged in return false
-    }
+public function loginAction(){
+    
+    $messages = Message::getAll();
+    $data = Admin::getUser();
+    
+    if(isset($_POST ['login'])){
 
+      $admin = Admin::getUser();
+      $admin = $admin[0];
 
-  public function indexAction(){
-//    View::renderTemplate('login.html');
+      $login = $_POST['admin'];
+      $password = $_POST['password'];
+      
+        if ($login == $admin['email'] && $password == $admin['password']) {
+          View::renderTemplate('Messages/index.html', ['messages'=> $messages]);
+        } else {
+          echo "wrong login or password";
+        }
+
+      } else {
+        echo "error.something went wrong";
+      }
+      
   }
 
 }
+
+
+

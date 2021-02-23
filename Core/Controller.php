@@ -22,6 +22,8 @@ class Controller{
     }else{
       throw new \Exception("Method $method not found in controller" .get_class($this));
     }
+
+
   }
 
   protected function before(){
