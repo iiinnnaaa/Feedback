@@ -3,7 +3,13 @@
 {% block title %} Home {% endblock %}
 
 {% block body %}
+
+{% if session.email is defined%}
+	{% if session.password is defined%}
+
 <h1>Messages</h1>
+
+<h2>Hello {{ session.email }}</h2>
 
 <ul>
 	{% for message in messages %}
@@ -23,5 +29,13 @@
 	</form>
 	{% endfor %}
 </ul>
+
+	{% endif %}
+{% else %}
+	<h1>wrong login or password</h1>
+{% endif %}
+
+
+
 
 {% endblock %}

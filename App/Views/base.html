@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +8,34 @@
 </head>
 <body>
 
+{% if session.email is defined%}
+{% if session.password is defined%}
+
+
+
 <nav>
+	<p>You are logged in as {{ session.email }}</p>
 	<a href="/">Send Feedback</a>
 	<!-- <a href="/home/login">Login</a> -->
+	 <a href="/messages/index">Messages</a>
+<!--	 <a href="/admin/users/logout">Logout</a>-->
+	<form action="/admin/users/logout" method="post">
+	<input class="button" type="submit"
+	       name="logout" value="logout"> </form>
+</nav>
+
+{% endif %}
+{% else %}
+<nav>
+	<a href="/">Send Feedback</a>
+	 <a href="/home/login">Login</a>
 	<!-- <a href="/messages/index">Messages</a> -->
 	<!-- <a href="/home/login">Logout</a> -->
 </nav>
+
+{% endif %}
+
+
 
 {% block body %}
 {% endblock %}

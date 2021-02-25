@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Message;
 use \Core\View;
 
 class Home extends \Core\Controller {
@@ -11,7 +12,15 @@ class Home extends \Core\Controller {
   }
 
   public function loginAction(){
-    View::renderTemplate('Home/login.html');
+
+    if(isset($_SESSION['email'])){
+      $messages = Message::getAll();
+      View::renderTemplate('Messages/index.html', ['messages'=> $messages]);
+    }
+    else{
+      View::renderTemplate('Home/login.html');
+    }
+
   }
 
 

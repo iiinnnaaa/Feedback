@@ -9,6 +9,12 @@ use Core\Validator\Validator;
 
 class Messages extends \Core\Controller {
 
+  public function indexAction(){
+    $messages = Message::getAll();
+
+    View::renderTemplate('Messages/index.html', ['messages'=> $messages]);
+  }
+
   public function addAction(){
     $database = Model::getDB();
 

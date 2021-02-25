@@ -1,28 +1,28 @@
-
-
 {% extends "base.html" %}
 
 {% block title %} Home {% endblock %}
 
 {% block body %}
 
-	<form action="/admin/users/login" method="post">
-		<div>
-			<h1>Login</h1>
 
-			<div class="textbox">
-				<input type="email" placeholder="Enter admin email"
-						name="admin" Required>
-			</div>
-			<br>
-			<div class="textbox">
-				<input type="password" placeholder="Password"
-						name="password" Required>
-			</div>
-			<br>
-			<input class="button" type="submit"
-					name="login" value="Login">
+<form action="/admin/users/login" method="post">
+	<div>
+		<h1>Login</h1>
+
+		<div class="textbox">
+			<input type="email" placeholder="Enter admin email"
+			       name="admin" Required>
 		</div>
-	</form>
+		<br>
+		<div class="textbox">
+			<input type="password" placeholder="Password"
+			       name="password" Required>
+		</div>
+		<br>
+		<input class="button" type="submit"
+		       name="login" value="Login">
+	</div>
+</form>
+
 
 {% endblock %}
