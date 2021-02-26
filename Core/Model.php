@@ -3,7 +3,6 @@
 namespace Core;
 
 use PDO;
-//use App\Config;
 
 class Model{
   public static function getDB(){

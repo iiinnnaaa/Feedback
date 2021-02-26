@@ -2,21 +2,38 @@
 
 {% block title %} Home {% endblock %}
 
+
 {% block body %}
 
-<h1>Send Feedback</h1>
+<div class="ufive-feedback">
+	<section id="feedback">
+		<h1>Send Feedback</h1>
 
 <form action="/messages/add" method="POST">
-	<input type="text" name="firstname" placeholder="First Name" minlength="3" >
-	<br/>	<br>
-	<input type="text" name="lastname" placeholder="Last Name" minlength="3" >
-	<br/>	<br>
-	<input type="email" name="email" placeholder="Enter your email" >
-	<br>
-	<br>
-	<textarea id="feedback" name="feedback" rows="5" cols="33" minlength="2" placeholder="Your message" ></textarea>
-	<br><br>
-	<input type="submit" name="add" value="Send">
-</form>
+	<div class="field name-box">
+		<input type="text"  id="name" name="firstname" placeholder="Insert your first name" minlength="3" Required>
+		<label for="name">First name</label>
+	</div>
 
+	<div class="field name-box">
+		<input type="text"  id="name" name="lastname" placeholder="Insert your last name" minlength="3" Required>
+		<label for="name">Last name</label>
+	</div>
+
+	<div class="field email-box">
+		<input type="text" id="email" name="email" placeholder="Your E-mail" />
+		<label for="email">E-mail</label>
+	</div>
+
+
+	<div class="field msg-box">
+		<textarea id="msg" name="feedback" rows="4" placeholder="Write your opinion..." minlength="3" Required/></textarea>
+		<label for="msg">Feedback</label>
+	</div>
+
+	<input class="button" type="submit"  name="add"  value="Send" />
+
+		</form>
+	</section>
+</div>
 {% endblock %}

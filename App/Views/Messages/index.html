@@ -1,41 +1,41 @@
+
 {% extends "base.html" %}
 
 {% block title %} Home {% endblock %}
 
 {% block body %}
 
+<link href="https://fonts.googleapis.com/css?family=Cuprum|Roboto&display=swap" rel="stylesheet">
+
 {% if session.email is defined%}
-	{% if session.password is defined%}
+{% if session.password is defined%}
 
-<h1>Messages</h1>
-
-<h2>Hello {{ session.email }}</h2>
-
-<ul>
+	<div class="wrapper">
 	{% for message in messages %}
-	<hr>
-	<form action="/messages/delete" method="POST">
-		<input type="hidden" name="id" value="{{ message.id }}">
-	<h2>{{ message.firstname }} {{ message.lastname }} <h5>{{ message.sent_at }}</h5>
-		<input type="submit"  formaction="/messages/view"   name="view" value="View">
-		<input type="submit" name="delete" value="Delete"></h2>
-	<h2>{{ message.email }}</h2>
-	<h4>{% if message.message|length > 350 %}
-		{{ message.message|slice(0, 350) }}
-		{% else %}
-		{{ message.message }}
-		{% endif %}</h4>
-	<hr>
-	</form>
+	<div class="ufive-card">
+		<form action="/messages/delete" method="POST">
+			<input type="hidden" name="id" value="{{ message.id }}">
+			<div class="u5-card">
+				<div class="u5-text"><span>Feedbacks</span></div>
+				<div class="u5-line"></div>
+				<h4>{{ message.firstname }} {{ message.lastname }}</h4>
+				<span class="u5-author">{{ message.email }}</span>
+				<p>{% if message.message|length > 350 %}
+					{{ message.message|slice(0, 350) }}
+					{% else %}
+					{{ message.message }}
+					{% endif %}</p>
+				<a class="u5-btn" href="#"><span>	<input type="submit"  formaction="/messages/view"   name="view" value="View"></span></a>
+				<div class="u5-date"><span>{{ message.sent_at }}</span></div>
+				<!--			<input type="submit" name="delete" value="Delete"></h2>-->
+			</div>
+		</form>
+	</div>
 	{% endfor %}
-</ul>
+</div>
 
-	{% endif %}
-{% else %}
-	<h1>wrong login or password</h1>
 {% endif %}
-
-
-
-
+{% else %}
+<h1>wrong login or password</h1>
+{% endif %}
 {% endblock %}

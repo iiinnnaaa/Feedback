@@ -12,7 +12,6 @@ class Home extends \Core\Controller {
   }
 
   public function loginAction(){
-
     if(isset($_SESSION['email'])){
       $messages = Message::getAll();
       View::renderTemplate('Messages/index.html', ['messages'=> $messages]);

@@ -1,0 +1,128 @@
+.ufive-card {
+	width: 100%;
+	line-height: 1.3;
+}
+.ufive-card p {
+	font-size: 15px;
+	font-family: "Cuprum";
+}
+.ufive-card h4 {
+	margin-top: 0px;
+	font-size: 30px;
+	letter-spacing: 1px;
+	margin-bottom: 1em;
+	font-family: "Cuprum";
+}
+.u5-text {
+	position: absolute;
+	opacity: 0.2;
+	letter-spacing: -0.5rem;
+	font-size: 140px;
+	font-weight: 700;
+	top: -10px;
+	font-family: "Roboto";
+}
+.u5-card p,
+h4,
+span {
+	color: #fafafa;
+}
+.u5-line {
+	width: 20px;
+	height: 3px;
+	background: white;
+}
+.u5-card {
+	/*margin: 0 auto;*/
+	top: 100px;
+	float: left;
+	margin: 3% 7.5% 3% 7.5%;
+	position: relative;
+	width: 80em;
+	max-width: 85%;
+	min-height: 100px;
+	overflow: hidden;
+	background: #393939;
+	padding: 60px 30px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px 0px #393939;
+}
+.u5-author {
+	font-family: "Cuprum";
+	color: #fafafa;
+	opacity: 0.8;
+	font-size: 18px;
+}
+.u5-date {
+	font-family: "Cuprum";
+	opacity: 0.8;
+	font-size: 15px;
+	width: 100%;
+	position: relative;
+}
+.u5-date span {
+	color: #f3be81;
+	position: absolute;
+	right: 0px;
+	top: 30px;
+}
+.u5-btn {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	line-height: 1;
+	padding-left: 26px;
+	text-transform: uppercase;
+	padding-bottom: 4px;
+	font-size: 14px;
+	font-family: "Cuprum";
+}
+@media (min-width: 800px) {
+	.u5-btn {
+		font-size: 14px;
+		padding-left: 36px;
+		font-family: "Cuprum";
+	}
+}
+.u5-btn::before {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 1px;
+	background: currentColor;
+	left: 0;
+	width: 20px;
+	top: 50%;
+	margin-top: -1px;
+	transition: transform 0.3s cubic-bezier(0.42, 0.01, 0.23, 1);
+	transform-origin: left;
+}
+.u5-btn:hover::before {
+	transform: scaleX(1.333);
+}
+@media (min-width: 800px) {
+	.u5-btn::before {
+		width: 30px;
+	}
+}
+.u5-btn span {
+	display: inline-block;
+	transition: transform 0.3s cubic-bezier(0.42, 0.01, 0.23, 1);
+}
+.u5-btn:hover span {
+	transform: translateX(12px);
+}
+@media (min-width: 800px) {
+	.u5-btn:hover span {
+		transform: translateX(18px);
+	}
+}
+@media (max-width: 765px) {
+	.u5-card {
+		margin-left: 0;
+		top: 0;
+		margin-top: 35px;
+	}
+}

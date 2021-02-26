@@ -1,45 +1,85 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/feedback.css">
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="/css/messages.css">
 </head>
 <body>
 
 {% if session.email is defined%}
 {% if session.password is defined%}
 
-
-
+<div class="ufive-navigation">
 <nav>
-	<p>You are logged in as {{ session.email }}</p>
-	<a href="/">Send Feedback</a>
-	<!-- <a href="/home/login">Login</a> -->
-	 <a href="/messages/index">Messages</a>
-<!--	 <a href="/admin/users/logout">Logout</a>-->
-	<form action="/admin/users/logout" method="post">
-	<input class="button" type="submit"
-	       name="logout" value="logout"> </form>
+	<p>FEEDBACK</p>
+
+	<button id="burger" class="burger">
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</button>
+
+	<ul>
+		<li><a href="/">Send Feedback</a></li>
+		<li><a href="/messages/index">Messages</a></li>
+<!--		<form action="/admin/users/logout" method="post">-->
+<!--			<input class="button" type="submit"-->
+<!--			       name="logout" value="logout"> </form>-->
+
+
+		<li> 	<a href="#" id="logout">
+			<span></span>
+			<span></span>
+			<span></span>
+			<form action="/admin/users/logout" method="post">
+				<input class="lbutton" type="submit"
+				       name="logout" value=""> Logout </form>
+		</a></li>
+
+	</ul>
+
+<!--	<a href="/">Send Feedback</a>-->
+<!--	&lt;!&ndash; <a href="/home/login">Login</a> &ndash;&gt;-->
+<!--	 <a href="/messages/index">Messages</a>-->
+<!--&lt;!&ndash;	 <a href="/admin/users/logout">Logout</a>&ndash;&gt;-->
+<!--	<form action="/admin/users/logout" method="post">-->
+<!--	<input class="button" type="submit"-->
+<!--	       name="logout" value="logout"> </form>-->
 </nav>
+</div>
 
 {% endif %}
 {% else %}
-<nav>
-	<a href="/">Send Feedback</a>
-	 <a href="/home/login">Login</a>
-	<!-- <a href="/messages/index">Messages</a> -->
-	<!-- <a href="/home/login">Logout</a> -->
-</nav>
+<!--<nav>-->
+<!--	<a href="/">Send Feedback</a>-->
+<!--	 <a href="/home/login">Login</a>-->
+<!--	&lt;!&ndash; <a href="/messages/index">Messages</a> &ndash;&gt;-->
+<!--	&lt;!&ndash; <a href="/home/login">Logout</a> &ndash;&gt;-->
+<!--</nav>-->
+
+<div class="ufive-navigation">
+	<nav>
+		<p>FEEDBACK</p>
+
+		<button id="burger" class="burger">
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</button>
+
+		<ul>
+			<li><a href="/">Send Feedback</a></li>
+			<li><a href="/home/login">Login</a></li>
+		</ul>
+	</nav>
+</div>
+
 
 {% endif %}
-
-
-
 {% block body %}
 {% endblock %}
-
 
 
 </body>

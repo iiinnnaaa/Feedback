@@ -25,14 +25,14 @@ public function loginAction(){
           $_SESSION['email'] = $login;
           $_SESSION['password'] = $password;
 
-          View::renderTemplate('Messages/index.html', ['messages' => $messages]);
+        header("Location: /messages/index");
 
       } else {
-          echo "wrong login or password try again";
+        throw new \Exception("Wrong login or password, please try again");
         }
 
       } else {
-        echo "error.something went wrong";
+        throw new \Exception("ERROR. Something went wrong");
       }
 
   }
@@ -42,13 +42,12 @@ public function loginAction(){
       session_unset();
       session_destroy();
 
-      View::renderTemplate('Home/index.html');
+      header("Location: /");
     }
     else {
-      echo "error";
+      throw new \Exception("Logout failed. Try again.");
     }
   }
-
 }
 
 

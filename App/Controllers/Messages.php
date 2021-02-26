@@ -56,14 +56,14 @@ class Messages extends \Core\Controller {
         if($insert){
           View::renderTemplate('Messages/add.html');
         } else {
-          echo "error.something went wrong";
-
+          throw new \Exception("Error. Try again");
         }
       } else {
 //        $errors = array_column($errors, 'errors');
-        echo "<pre>";
-        print_r($errors);
-        echo "</pre>";
+//        echo "<pre>";
+//        print_r($errors);
+//        echo "</pre>";
+        throw new \Exception("Please fill required fileds");
       }
     }
   }
@@ -81,7 +81,7 @@ class Messages extends \Core\Controller {
         View::renderTemplate('Messages/delete.html');
 
       } else {
-        echo "error.something went wrong";
+        throw new \Exception("Deleted Failed. Try again.");
       }
     }
   }
@@ -96,9 +96,8 @@ class Messages extends \Core\Controller {
       View::renderTemplate('Messages/view.html', ['item'=>$item]);
 
       } else {
-        echo "error.something went wrong";
+      throw new \Exception("Error. Something went wrong. Please try again.");
       }
-
   }
 }
 

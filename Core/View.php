@@ -2,7 +2,6 @@
 namespace Core;
 
 class View{
-
   //render a view file
   public static function render($view, $args=[]){
 
@@ -18,7 +17,6 @@ class View{
   }
 
   //render a view template using twig
-
   public static function renderTemplate($template, $args = []){
     static $twig = null;
 

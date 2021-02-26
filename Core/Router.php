@@ -99,7 +99,7 @@ class Router{
             throw new \Exception("Method $action in controller $controller not found");
           }
         }else{
-           throw new \Exception("COntroller class $controller not found");
+           throw new \Exception("Controller class $controller not found");
       }
     }else{
       throw new \Exception("No route matched", '404');

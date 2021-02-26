@@ -5,24 +5,50 @@
 {% block body %}
 
 
-<form action="/admin/users/login" method="post">
-	<div>
-		<h1>Login</h1>
+<!--<form action="/admin/users/login" method="post">-->
+<!--	<div>-->
+<!--		<h1>Login</h1>-->
 
-		<div class="textbox">
-			<input type="email" placeholder="Enter admin email"
-			       name="admin" Required>
+<!--		<div class="textbox">-->
+<!--			<input type="email" placeholder="Enter admin email"-->
+<!--			       name="admin" Required>-->
+<!--		</div>-->
+<!--		<br>-->
+<!--		<div class="textbox">-->
+<!--			<input type="password" placeholder="Password"-->
+<!--			       name="password" Required>-->
+<!--		</div>-->
+<!--		<br>-->
+<!--		<input class="button" type="submit"-->
+<!--		       name="login" value="Login">-->
+<!--	</div>-->
+<!--</form>-->
+
+
+<div class="u5-login-form">
+	<h2>Admin Login</h2>
+	<form action="/admin/users/login" method="post">
+		<div class="u5-user-form">
+			<input type="email"  name="admin" required="">
+			<label>Email</label>
 		</div>
-		<br>
-		<div class="textbox">
-			<input type="password" placeholder="Password"
-			       name="password" Required>
+		<div class="u5-user-form">
+			<input type="password" name="password" required="">
+			<label>Password</label>
 		</div>
-		<br>
-		<input class="button" type="submit"
-		       name="login" value="Login">
-	</div>
-</form>
+
+		<a href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+
+			<input class="lbutton" type="submit"
+			       name="login" value="">
+				Login
+		</a>
+	</form>
+</div>
+
 
 
 {% endblock %}
