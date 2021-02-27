@@ -1,0 +1,25 @@
+footer {
+  background: #ffe8ce;
+  color: #aaa;
+  padding-top: 10px;
+  margin-top: 5em;
+}
+
+footer a {
+  color: #aaa;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+footer .copyright {
+  padding: 15px 0;
+  background: #333;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+footer .copyright span {
+  color: #f9ac1f;
+}

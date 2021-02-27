@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="/css/feedback.css">
 	<link rel="stylesheet" href="/css/login.css">
 	<link rel="stylesheet" href="/css/messages.css">
+	<link rel="stylesheet" href="/css/msgstyle.css">
+	<link rel="stylesheet" href="/css/ftstyle.css">
 </head>
 <body>
 
@@ -25,11 +27,6 @@
 	<ul>
 		<li><a href="/">Send Feedback</a></li>
 		<li><a href="/messages/index">Messages</a></li>
-<!--		<form action="/admin/users/logout" method="post">-->
-<!--			<input class="button" type="submit"-->
-<!--			       name="logout" value="logout"> </form>-->
-
-
 		<li> 	<a href="#" id="logout">
 			<span></span>
 			<span></span>
@@ -38,27 +35,12 @@
 				<input class="lbutton" type="submit"
 				       name="logout" value=""> Logout </form>
 		</a></li>
-
 	</ul>
-
-<!--	<a href="/">Send Feedback</a>-->
-<!--	&lt;!&ndash; <a href="/home/login">Login</a> &ndash;&gt;-->
-<!--	 <a href="/messages/index">Messages</a>-->
-<!--&lt;!&ndash;	 <a href="/admin/users/logout">Logout</a>&ndash;&gt;-->
-<!--	<form action="/admin/users/logout" method="post">-->
-<!--	<input class="button" type="submit"-->
-<!--	       name="logout" value="logout"> </form>-->
 </nav>
 </div>
 
 {% endif %}
 {% else %}
-<!--<nav>-->
-<!--	<a href="/">Send Feedback</a>-->
-<!--	 <a href="/home/login">Login</a>-->
-<!--	&lt;!&ndash; <a href="/messages/index">Messages</a> &ndash;&gt;-->
-<!--	&lt;!&ndash; <a href="/home/login">Logout</a> &ndash;&gt;-->
-<!--</nav>-->
 
 <div class="ufive-navigation">
 	<nav>
@@ -81,6 +63,12 @@
 {% block body %}
 {% endblock %}
 
+	<!-- footer -->
+	<footer>
+		<div class="copyright text-center">
+			Copyright &copy; 2020 <span>uFive.Ru</span>
+		</div>
+	</footer>
 
 </body>
 </html>

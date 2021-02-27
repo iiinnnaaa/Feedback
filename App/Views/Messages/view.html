@@ -3,17 +3,26 @@
 {% block title %} Home {% endblock %}
 
 {% block body %}
-<h1>Single Message</h1>
+
+<link href="https://fonts.googleapis.com/css?family=Cuprum|Roboto&display=swap" rel="stylesheet">
 
 
-<ul>
-		<h4>ID: {{ item['id'] }}</h4>
-	<h2><i>Name:</i> {{ item.firstname }} {{ item.lastname }}</h2>
-			<h5><i>Sent at:</i> {{ item.sent_at }}</h5>
-		<h2><i>Email: </i> {{ item.email }}</h2>
-		<h4><i>Feedback:</i> <br> {{ item.message }}</h4>
-</ul>
+<div class="block-card">
 
-<h4><a href="/messages/index"> &larr; Go back</a></h4>
+  <div class="cont-card">
+
+    <h5>ID {{ item['id'] }} </h5>
+    <h4>{{ item.firstname }} {{ item.lastname }}</h4>
+    <span class="e-author">Author: {{ item.email }}</span>
+    <p>{{ item.message }}</p>
+   
+    <div class="back">
+ 	 <a href="/messages/index">Back</a>
+	</div>
+    <div class="s-date"><span>Sent at {{ item.sent_at }}</span></div>
+
+  </div>
+
+</div>
 
 {% endblock %}

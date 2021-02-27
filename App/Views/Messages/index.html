@@ -17,7 +17,8 @@
 			<input type="hidden" name="id" value="{{ message.id }}">
 			<div class="u5-card">
 				<div class="u5-text"><span>Feedbacks</span></div>
-				<div class="u5-line"></div>
+				<h5 id="id"> ID {{ message.id }}</h5>
+				<div class="u5-line"></div> 
 				<h4>{{ message.firstname }} {{ message.lastname }}</h4>
 				<span class="u5-author">{{ message.email }}</span>
 				<p>{% if message.message|length > 350 %}
@@ -25,17 +26,18 @@
 					{% else %}
 					{{ message.message }}
 					{% endif %}</p>
-				<a class="u5-btn" href="#"><span>	<input type="submit"  formaction="/messages/view"   name="view" value="View"></span></a>
-				<div class="u5-date"><span>{{ message.sent_at }}</span></div>
+				<a class="u5-btn" href="#"><span><input type="submit" id="view" formaction="/messages/view"   name="view" value=""> More details </span></a>
+				<div class="u5-date"><span id="date">{{ message.sent_at }} </span> <span id="det"><input type="submit" id="view" name="delete" value=""><img src="/img/delete.png" ></span></div>
 				<!--			<input type="submit" name="delete" value="Delete"></h2>-->
 			</div>
 		</form>
 	</div>
 	{% endfor %}
 </div>
-
+<div id="space"></div>
 {% endif %}
 {% else %}
 <h1>wrong login or password</h1>
 {% endif %}
+
 {% endblock %}
