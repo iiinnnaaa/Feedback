@@ -54,15 +54,12 @@ class Messages extends \Core\Controller {
                                        VALUES ('$firstname', '$lastname', '$email', '$message')");
 
         if($insert){
-          View::renderTemplate('Messages/add.html');
+//          header("Location: /home/index", ['status=>1']);
+          View::renderTemplate('Home/index.html',['status'=>TRUE]);
         } else {
           throw new \Exception("Error. Try again");
         }
       } else {
-//        $errors = array_column($errors, 'errors');
-//        echo "<pre>";
-//        print_r($errors);
-//        echo "</pre>";
         throw new \Exception("Please fill required fileds");
       }
     }

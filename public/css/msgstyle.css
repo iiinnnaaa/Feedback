@@ -1,6 +1,7 @@
 .block-card {
   width: 100%;
   line-height: 1.3;
+  min-height: calc(100vh - 177px);
 }
 .block-card p {
   font-size: 15px;

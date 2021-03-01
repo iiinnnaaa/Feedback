@@ -37,5 +37,19 @@
 	</section>
 </div>
 
+{% if status is defined  %}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript">
+	Swal.fire({
+		position: 'center',
+		icon: 'success',
+		title: 'Your feedback has been sent successfully',
+		showConfirmButton: true,
+	})
+</script>
+{% else %}
+
+
+{% endif %}
 
 {% endblock %}
