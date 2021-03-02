@@ -4,7 +4,7 @@ namespace Core;
 
 class Error{
 
-  const SHOW_ERRORS = true;
+  const SHOW_ERRORS = false;
 
   public static function errorHandler($level, $message, $file, $line){
     if(error_reporting() !== 0){

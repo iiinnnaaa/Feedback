@@ -1,9 +1,136 @@
 {% extends "base.html" %}
 
-{% block title %} Page not found {% endblock %}
+{% block title %} 404 {% endblock %}
 
 {% block body %}
-<h1>Page not found</h1>
-<h2>Sorry, page doesn't exist.</h2>
+
+
+
+	<div class="notfbody">
+		<div class="notfpage">
+			<aside><img src="/img/Error.png" alt="404 Image" />
+			</aside>
+			<main class="main">
+				<h1>Not found !</h1>
+				<p><em>This page was not found</em>
+				</p>
+				<a href="/" id="hbutton">Go home</a>
+			</main>
+		</div>
+	</div>
+
+
+
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto:wght@500&display=swap");
+	* {
+		box-sizing: 0;
+		margin: 0;
+		padding: 0;
+		cursor: url("/img/cursor.png"),
+		auto;
+	}
+	.notfbody {
+		background:linear-gradient(to right, #a9773d57  50%, #393939 50%);
+		font-family: "Roboto", sans-serif;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1.5;
+		color: white;
+		height: 85.9vh;
+	}
+	.notfpage {
+		display: flex;
+		align-items: center;
+		height: 82vh;
+		max-width: 1000px;
+		width: calc(100% - 4rem);
+		margin: 0 auto;
+	}
+	.notfpage > * {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		height: 80vh;
+		max-width: 500px;
+		width: 100%;
+		padding: 2.5rem;
+	}
+	aside {
+		background-image: url("/img/aside.png");
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: 25px 100%;
+	}
+	aside img {
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+	.main {
+		text-align: center;
+	}
+	.main h1 {
+		font-family: "Fontdiner Swanky", cursive;
+		font-size: 4rem;
+		color: #cc8b3f;
+		margin-bottom: 1rem;
+	}
+	.main p {
+		margin-bottom: 2.5rem;
+	}
+	.main p em {
+		font-style: italic;
+		color: #cc8b3f;
+	}
+	.main #hbutton {
+		text-decoration: none;
+		font-family: "Fontdiner Swanky", cursive;
+		font-size: 1rem;
+		color: #383838;
+		border: none;
+		background-color: #cc8b3f;
+		padding: 1rem 2.5rem;
+		transform: skew(-5deg);
+		transition: all 0.1s ease;
+		cursor: url("/img/cursors-eye.png"),
+		auto;
+	}
+	.main #hbutton:hover {
+		background-color: #f1e1b5;
+		transform: scale(1.15);
+	}
+	@media (max-width: 700px) {
+		.notfbody {
+			background: #383838;
+			font-size: 16px;
+		}
+		.notfpage {
+			flex-flow: column;
+		}
+		.notfpage > * {
+			max-width: 700px;
+			height: 100%;
+		}
+
+		aside {
+			background-image: none;
+			background-color: #e1c19b;
+		}
+		aside img {
+			max-width: 300px;
+		}
+	}
+
+	footer{
+		margin-top: 0;
+	}
+
+	footer .copyright{
+		margin-top: 0;
+	}
+
+</style>
 
 {% endblock %}

@@ -54,8 +54,7 @@ class Messages extends \Core\Controller {
                                        VALUES ('$firstname', '$lastname', '$email', '$message')");
 
         if($insert){
-//          header("Location: /home/index", ['status=>1']);
-          View::renderTemplate('Home/index.html',['status'=>TRUE]);
+          View::renderTemplate('Messages/add.html');
         } else {
           throw new \Exception("Error. Try again");
         }
@@ -67,20 +66,19 @@ class Messages extends \Core\Controller {
 
   public function deleteAction(){
     $database = Model::getDB();
-
-    if(isset($_POST['delete'])){
+    $messages = Message::getAll();
 
         $id = $_POST['id'];
 
       $delete = $database->query("DELETE FROM `messages` WHERE `id` = '$id'");
 
       if($delete){
-        View::renderTemplate('Messages/delete.html');
+        View::renderTemplate('Messages/delete.html',['messages'=>$messages]);
 
       } else {
         throw new \Exception("Deleted Failed. Try again.");
       }
-    }
+
   }
 
   public function viewAction(){

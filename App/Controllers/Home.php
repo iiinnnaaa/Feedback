@@ -11,6 +11,7 @@ class Home extends \Core\Controller {
     View::renderTemplate('Home/index.html');
   }
 
+
   public function loginAction(){
     if(isset($_SESSION['email'])){
       $messages = Message::getAll();
@@ -21,6 +22,4 @@ class Home extends \Core\Controller {
     }
 
   }
-
-
 }
