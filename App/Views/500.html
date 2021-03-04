@@ -4,9 +4,99 @@
 
 {% block body %}
 
-<div class="errs">
-<h1>An error occurred.</h1>
-<h2>Sorry, an error has occurred.</h2>
+<div class="wrapper">
+	<div class="box">
+		<h1>500</h1>
+		<p>Sorry, it's me, not you.</p>
+
+
+		<p class="main"><a href="/" id="hbutton">Go home</a></p>
+	</div>
 </div>
+
+<style>
+	html { box-sizing: border-box; }
+
+	*,
+	*::before,
+	*::after { box-sizing: inherit; }
+
+	body * {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		font: normal 100%/1.15 "Merriweather", serif;
+		/*background-color: #f3be81;*/
+		color: #fff;
+	}
+
+	.wrapper {
+		position: relative;
+		height: auto;
+		margin: auto;
+		min-height: calc(100vh - 165px);
+		margin-top: 40px;
+	}
+
+	/* https://www.flaticon.com/authors/vectors-market */
+	/* https://www.flaticon.com/authors/icomoon */
+	.box {
+		font-family: "Fontdiner Swanky", cursive;
+		max-width: 70%;
+		min-height: auto;
+		margin: 0 auto;
+		padding: 1em 1em;
+		text-align: center;
+		background: url("/img/flame.png") no-repeat top 10em center/128px 128px,
+		transparent url("/img/desktop.png") no-repeat top 13em center/128px 128px;
+	}
+
+	h1, p:not(:last-of-type) { text-shadow: 0 0 15px #393939; }
+
+	h1 {
+		margin: -27px 0 2rem 0;
+		font-size: 8em;
+	}
+
+	p {
+		margin-bottom: 0.5em;
+		font-size: 3em;
+		margin-top: 1em;
+	}
+
+	p:first-of-type { margin-top: 5em; }
+
+	p > a {
+		border-bottom: 1px dashed #216f79;
+		font-style: italic;
+		text-decoration: none;
+		color: #216f79;
+	}
+
+	p img { vertical-align: bottom; }
+
+	.main a {
+		text-decoration: none;
+		font-family: "Fontdiner Swanky", cursive;
+		font-size: 1rem;
+		color: #ffe8ce;
+		border: none;
+		background-color: #393939;
+		padding: 1rem 2.5rem;
+		transform: skew(-5deg);
+		transition: all 0.1s ease;
+	}
+	.main a:hover {
+		color: #393939;
+		background-color: #f3be818c;
+		transform: scale(1.15);
+		border: 2px solid #393939;
+		box-shadow: 0 0 15px 3px #ffffff;
+	}
+
+</style>
+
 
 {% endblock %}
