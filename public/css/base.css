@@ -14,6 +14,7 @@ body {
 }
 
 .ufive-navigation nav {
+	cursor: default;
 	background-color: #393939;
 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 	display: flex;
@@ -81,6 +82,7 @@ body {
 }
 
 .ufive-navigation ul li a {
+	cursor: pointer;
 	color: #f3be81;
 	position: relative;
 	text-decoration: none;

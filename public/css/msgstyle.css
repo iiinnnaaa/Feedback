@@ -31,9 +31,7 @@ span {
 
 .cont-card {
     margin: 5%;
-    /*float: left;*/
     position: relative;
-    /*min-width: 1250px;*/
     min-height: 200px;
     overflow: hidden;
     background: #393939;
@@ -63,56 +61,6 @@ span {
   right: 0px;
 }
 
-/*@media (min-width: 800px) {
-  .u5-btn {
-    font-size: 14px;
-    padding-left: 36px;
-    font-family: "Cuprum";
-  }
-}*/
-/*.u5-btn::before {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 1px;
-  background: currentColor;
-  left: 0;
-  width: 20px;
-  top: 50%;
-  margin-top: -1px;
-  transition: transform 0.3s cubic-bezier(0.42, 0.01, 0.23, 1);
-  transform-origin: left;
-}
-.u5-btn:hover::before {
-  transform: scaleX(1.333);
-}
-@media (min-width: 800px) {
-  .u5-btn::before {
-    width: 30px;
-  }
-}*/
-/*.u5-btn span {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.42, 0.01, 0.23, 1);
-}
-.u5-btn:hover span {
-  transform: translateX(12px);
-}
-@media (min-width: 800px) {
-  .u5-btn:hover span {
-    transform: translateX(18px);
-  }
-}
-@media (max-width: 765px) {
-  .cont-card {
-    margin-left: 0;
-    top: 0;
-    margin-top: 35px;
-  }
-}
-
-*/
-
 .back a {
   position: absolute;
     font-family: "Cuprum";
@@ -128,15 +76,14 @@ span {
 .back a:hover {
   position: absolute;
   font-size: 17px;
-  background-color: #f19d3d;
-  border: 1px solid #f3be50;
+  background-color: #ffe8ce;
+  border: 1px solid #ffe8ce;
   color: #393939;
   padding: 7px 27px;
-  /*border-radius: 5px;*/
   text-transform: uppercase;
   text-decoration: inherit;
+  box-shadow: 0px 0px 20px 3px #ffe8ce;
 }
-
 
 @media screen and (max-width: 480px){
   .cont-card {

@@ -59,7 +59,7 @@ class Messages extends \Core\Controller {
           throw new \Exception("Error. Try again");
         }
       } else {
-        throw new \Exception("Please fill required fileds");
+        throw new \Exception("Please fill required fileds", 400);
       }
     }
   }

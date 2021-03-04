@@ -33,7 +33,6 @@ span {
 	background: white;
 }
 .u5-card {
-	/*margin: 0 auto;*/
 	top: 100px;
 	margin: 3% 7.5% 5% 7.5%;
 	position: relative;
@@ -63,8 +62,6 @@ span {
 	position: relative;
 }
 .u5-date span {
-	/*padding-left: 30px;*/
-	/*margin-right: 35px;*/
 	color: #f3be81;
 	position: absolute;
 	right: 0px;
@@ -152,8 +149,6 @@ span {
 #space {
     height: 7em;
     color: yellow;
-    /*margin-top: 75em;*/
-    /*margin-top: 30em;*/
 }
 
 #view {

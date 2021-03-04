@@ -1,20 +1,11 @@
 footer {
   background: #ffe8ce;
   color: #aaa;
-  /*position: fixed;*/
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
 }
-
-/*footer a {*/
-/*  color: #aaa;*/
-/*}*/
-
-/*footer a:hover {*/
-/*  color: #fff;*/
-/*}*/
 
 footer .copyright {
   font-family: "Exo 2", sans-serif;

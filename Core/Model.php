@@ -20,7 +20,6 @@ class Model{
 
           //Throw an exception when error occurs
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
       }
     return $db;
   }

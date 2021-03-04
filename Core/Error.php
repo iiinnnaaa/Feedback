@@ -14,11 +14,14 @@ class Error{
 
   public static function exceptionHandler($exception){
 
-    //Code is 404 (not found) or 500 (general error)
+    //Code is 404 (not found) or 500 (general error) 400 (missing required field/parameter, or bad field/parameter)
     $code = $exception->getCode();
     if($code != 404){
-      $code = 500;
+      if($code != 400){
+        $code = 500;
+      }
     }
+
     http_response_code($code);
 
     if(self::SHOW_ERRORS){
