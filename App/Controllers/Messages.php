@@ -2,23 +2,25 @@
 
 namespace App\Controllers;
 
+use Core\Controller;
 use \Core\View;
 use App\Models\Message;
 use Core\Model;
 use Core\Validator\Validator;
+use Exception;
 
-class Messages extends \Core\Controller {
+class Messages extends Controller {
 
-  public function indexAction(){
+  public function indexAction() {
     $messages = Message::getAll();
 
-    View::renderTemplate('Messages/index.html', ['messages'=> $messages]);
+    View::renderTemplate('Messages/index.html', ['messages' => $messages]);
   }
 
-  public function addAction(){
+  public function addAction() {
     $database = Model::getDB();
 
-    if(isset($_POST['add'])){
+    if (isset($_POST['add'])) {
       $firstname = $_POST['firstname'];
       $lastname = $_POST['lastname'];
       $email = $_POST['email'];
@@ -28,71 +30,76 @@ class Messages extends \Core\Controller {
         [
           "name" => "firstname",
           "value" => $firstname,
-          "rules" => "required"
+          "rules" => "required",
         ],
         [
           "name" => "lastname",
           "value" => $lastname,
-          "rules" => "required"
+          "rules" => "required",
         ],
         [
           "name" => "email",
           "value" => $email,
-          "rules" => "email|required"
+          "rules" => "email|required",
         ],
         [
           "name" => "message",
           "value" => $message,
-          "rules" => "required"
-        ]
+          "rules" => "required",
+        ],
       ];
 
       $errors = Validator::validate($request);
 
-      if(!$errors){
+      if (!$errors) {
         $insert = $database->query("INSERT INTO `messages`( `firstname`, `lastname`, `email`, `message`)
                                        VALUES ('$firstname', '$lastname', '$email', '$message')");
 
-        if($insert){
+        if ($insert) {
           View::renderTemplate('Messages/add.html');
-        } else {
-          throw new \Exception("Error. Try again");
         }
-      } else {
-        throw new \Exception("Please fill required fileds", 400);
+        else {
+          throw new Exception("Error. Try again");
+        }
+      }
+      else {
+        throw new Exception("Please fill required fileds", 400);
       }
     }
   }
 
-  public function deleteAction(){
+  public function deleteAction() {
     $database = Model::getDB();
     $messages = Message::getAll();
 
-        $id = $_POST['id'];
+    $id = $_POST['id'];
 
-      $delete = $database->query("DELETE FROM `messages` WHERE `id` = '$id'");
+    $delete = $database->query("DELETE FROM `messages` WHERE `id` = '$id'");
 
-      if($delete){
-        View::renderTemplate('Messages/delete.html',['messages'=>$messages]);
+    if ($delete) {
+      View::renderTemplate('Messages/delete.html', ['messages' => $messages]);
 
-      } else {
-        throw new \Exception("Deleted Failed. Try again.");
-      }
+    }
+    else {
+      throw new Exception("Deleted Failed. Try again.");
+    }
 
   }
 
-  public function viewAction(){
+  public function viewAction() {
     $database = Model::getDB();
-    
-    if(isset($_POST['view'])){
+
+    if (isset($_POST['view'])) {
       $id = $_POST['id'];
       $item = Message::getItem($id);
       $item = $item[0];
-      View::renderTemplate('Messages/view.html', ['item'=>$item]);
+      View::renderTemplate('Messages/view.html', ['item' => $item]);
 
-      } else {
-      throw new \Exception("Error. Something went wrong. Please try again.");
-      }
+    }
+    else {
+      throw new Exception("Error. Something went wrong. Please try again.");
+    }
   }
+
 }
 

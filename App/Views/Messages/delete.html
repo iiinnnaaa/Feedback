@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %} Messages {% endblock %}
@@ -8,7 +7,8 @@
 <link href="https://fonts.googleapis.com/css?family=Cuprum|Roboto&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet"
+      type="text/css">
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
@@ -18,7 +18,7 @@
 		title: 'Data deleted successfully!',
 		showConfirmButton: false,
 		timer: 1000,
-	}).then(function() {
+	}).then(function () {
 		window.location = "/messages/index";
 	});
 </script>
@@ -30,7 +30,7 @@
 	<div class="ufive-card">
 
 		<form action="/messages/delete" method="POST">
-			<input type="hidden" name="id" value="{{ message.id }}">
+			<input name="id" type="hidden" value="{{ message.id }}">
 			<div class="u5-card">
 				<div class="u5-text"><span>Feedbacks</span></div>
 				<h5 id="id"> ID {{ message.id }}</h5>
@@ -42,15 +42,21 @@
 					{% else %}
 					{{ message.message }}
 					{% endif %}</p>
-				<a class="u5-btn" href="#"><span><input type="submit" id="view" formaction="/messages/view"  name="view" value=""> More details </span></a>
-				<div class="u5-date"><span id="date">{{ message.sent_at }} </span><span id="det"><input type="submit" id="del"  onclick="archiveFunction()" name="delete" value=""><img src="/img/delete.png" ></span></div>
+				<a class="u5-btn" href="#"><span><input formaction="/messages/view" id="view" name="view" type="submit"
+				                                        value=""> More details </span></a>
+				<div class="u5-date"><span id="date">{{ message.sent_at }} </span><span id="det"><input id="del" name="delete"
+				                                                                                        onclick="archiveFunction()"
+				                                                                                        type="submit"
+				                                                                                        value=""><img
+					src="/img/delete.png"></span></div>
 			</div>
 		</form>
 	</div>
 	{% endfor %}
 
 
-	<div id="space"></div></div>
+	<div id="space"></div>
+</div>
 {% endif %}
 {% else %}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -59,9 +65,9 @@
 		icon: 'error',
 		title: 'Oops...',
 		text: 'Something went wrong!',
-		showConfirmButton:false,
+		showConfirmButton: false,
 		timer: 1500,
-	}).then(function() {
+	}).then(function () {
 		window.location = "/home/index";
 	});
 </script>

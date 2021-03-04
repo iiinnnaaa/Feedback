@@ -3,23 +3,24 @@
 namespace App\Controllers;
 
 use App\Models\Message;
-use \Core\View;
+use Core\Controller;
+use Core\View;
 
-class Home extends \Core\Controller {
+class Home extends Controller {
 
-  public function indexAction(){
+  public function indexAction() {
     View::renderTemplate('Home/index.html');
   }
 
-
-  public function loginAction(){
-    if(isset($_SESSION['email'])){
+  public function loginAction() {
+    if (isset($_SESSION['email'])) {
       $messages = Message::getAll();
-      View::renderTemplate('Messages/index.html', ['messages'=> $messages]);
+      View::renderTemplate('Messages/index.html', ['messages' => $messages]);
     }
-    else{
+    else {
       View::renderTemplate('Home/login.html');
     }
 
   }
+
 }

@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Models;
 
+use Core\Model;
 use PDO;
+use PDOException;
 
-class Admin extends \Core\Model {
+class Admin extends Model {
 
   public static function getUser() {
 
@@ -16,24 +19,24 @@ class Admin extends \Core\Model {
 
       return $result;
 
-    } catch (\PDOException $e){
+    } catch (PDOException $e) {
       echo $e->getMessage();
     }
   }
 
-  public static function getAdmin($email){
-    try{
-    $db = static::getDB();
 
-    $admin = $db->query("SELECT `id`, `email`, `password` FROM `users` WHERE `email`='$email'");
+  public static function getAdmin($email) {
+    try {
+      $db = static::getDB();
 
-    $result = $admin->fetchAll(PDO::FETCH_ASSOC);
+      $admin = $db->query("SELECT `id`, `email`, `password` FROM `users` WHERE `email`='$email'");
 
-    return reset($result);
-    }
+      $result = $admin->fetchAll(PDO::FETCH_ASSOC);
 
-    catch (\PDOException $e){
+      return reset($result);
+    } catch (PDOException $e) {
       echo $e->getMessage();
     }
   }
- }
+
+}

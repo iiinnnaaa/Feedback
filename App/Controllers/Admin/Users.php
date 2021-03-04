@@ -1,18 +1,19 @@
 <?php
+
 namespace App\Controllers\Admin;
 
-use \Core\View;
 use App\Models\Admin;
 use App\Models\Message;
-use Core\Model;
+use Core\Controller;
+use Exception;
 
-class Users extends \Core\Controller{
+class Users extends Controller {
 
-public function loginAction(){
+  public function loginAction() {
 
     $messages = Message::getAll();
 
-    if(isset($_POST ['login'])){
+    if (isset($_POST ['login'])) {
 
       $email = $_POST['admin'];
       $admin = Admin::getAdmin($email);
@@ -22,32 +23,32 @@ public function loginAction(){
 
       if ($login == $admin['email'] && password_verify($password, $admin['password'])) {
 
-          $_SESSION['email'] = $login;
-          $_SESSION['password'] = $password;
+        $_SESSION['email'] = $login;
+        $_SESSION['password'] = $password;
 
         header("Location: /messages/index");
-
-      } else {
-        throw new \Exception("Wrong login or password, please try again");
-        }
-
-      } else {
-        throw new \Exception("ERROR. Something went wrong");
       }
-
+      else {
+        throw new Exception("Wrong login or password, please try again");
+      }
+    }
+    else {
+      throw new Exception("ERROR. Something went wrong");
+    }
   }
 
-  public function logoutAction(){
-    if(isset($_POST['logout'])){
+  public function logoutAction() {
+    if (isset($_POST['logout'])) {
       session_unset();
       session_destroy();
 
       header("Location: /");
     }
     else {
-      throw new \Exception("Logout failed. Try again.");
+      throw new Exception("Logout failed. Try again.");
     }
   }
+
 }
 
 

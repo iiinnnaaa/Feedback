@@ -2,7 +2,9 @@
 
 namespace Core;
 
-class Router{
+use Exception;
+
+class Router {
 
   /**
    * Associative array of routes (the routing table)
@@ -20,8 +22,7 @@ class Router{
    * $route  The route URL
    * $params Parameters (controller, action, etc.)
    */
-  public function add($route, $params = [])
-  {
+  public function add($route, $params = []) {
     // Convert the route to a regular expression: escape forward slashes
     $route = preg_replace('/\//', '\\/', $route);
 
@@ -40,9 +41,61 @@ class Router{
   /**
    * Get all the routes from the routing table
    */
-  public function getRoutes()
-  {
+  public function getRoutes() {
     return $this->routes;
+  }
+
+  /**
+   * Get the currently matched parameters
+   */
+  public function getParams() {
+    return $this->params;
+  }
+
+  public function dispatch($url) {
+
+    $url = $this->removeQueryStringVariable($url);
+
+    if ($this->match($url)) {
+      $controller = $this->params['controller'];
+      $controller = $this->convertToStudlyCaps($controller);
+      $controller = $this->getNamespace() . $controller;
+
+
+      if (class_exists($controller)) {
+        $controller_object = new $controller($this->params);
+
+        $action = $this->params['action'];
+        $action = $this->convertToCamelCase($action);
+
+        if (is_callable([$controller_object, $action])) {
+          $controller_object->$action();
+        }
+        else {
+          throw new Exception("Method $action in controller $controller not found");
+        }
+      }
+      else {
+        throw new Exception("Controller class $controller not found");
+      }
+    }
+    else {
+      throw new Exception("No route matched", '404');
+    }
+  }
+
+  protected function removeQueryStringVariable($url) {
+    if ($url != '') {
+      $parts = explode('&', $url, 2);
+
+      if (strpos($parts[0], '=') === FALSE) {
+        $url = $parts[0];
+      }
+      else {
+        $url = '';
+      }
+    }
+    return $url;
   }
 
   /**
@@ -52,7 +105,7 @@ class Router{
    * return boolean  true if a match found, false otherwise
    */
 
-  public function match($url){
+  public function match($url) {
     foreach ($this->routes as $route => $params) {
       if (preg_match($route, $url, $matches)) {
         foreach ($matches as $key => $match) {
@@ -62,77 +115,28 @@ class Router{
         }
 
         $this->params = $params;
-        return true;
+        return TRUE;
       }
     }
 
-    return false;
+    return FALSE;
   }
 
-  /**
-   * Get the currently matched parameters
-   */
-  public function getParams()
-  {
-    return $this->params;
-  }
-
-  public function dispatch($url){
-
-    $url = $this->removeQueryStringVariable($url);
-
-    if ($this->match($url)){
-      $controller = $this->params['controller'];
-      $controller = $this->convertToStudlyCaps($controller);
-      $controller = $this->getNamespace() .$controller;
-
-
-      if (class_exists($controller)){
-          $controller_object = new $controller($this->params);
-
-          $action = $this->params['action'];
-          $action = $this->convertToCamelCase($action);
-
-          if (is_callable([$controller_object, $action])){
-            $controller_object->$action();
-          } else {
-            throw new \Exception("Method $action in controller $controller not found");
-          }
-        }else{
-           throw new \Exception("Controller class $controller not found");
-      }
-    }else{
-      throw new \Exception("No route matched", '404');
-    }
-  }
-
-  protected function convertToStudlyCaps($string){
+  protected function convertToStudlyCaps($string) {
     return str_replace(' ', '', ucwords(str_replace('-', '', $string)));
   }
 
-  protected function convertToCamelCase($string){
-    return lcfirst($this->convertToStudlyCaps($string));
-  }
-
-  protected function removeQueryStringVariable($url){
-    if($url != ''){
-      $parts = explode('&', $url, 2);
-
-      if(strpos($parts[0], '=')=== false){
-        $url = $parts[0];
-      } else{
-        $url = '';
-      }
-    }
-    return $url;
-  }
-
-  protected function getNamespace(){
+  protected function getNamespace() {
     $namespace = 'App\Controllers\\';
 
-    if(array_key_exists('namespace', $this->params)){
-      $namespace .= $this->params['namespace'] .'\\';
+    if (array_key_exists('namespace', $this->params)) {
+      $namespace .= $this->params['namespace'] . '\\';
     }
     return $namespace;
   }
+
+  protected function convertToCamelCase($string) {
+    return lcfirst($this->convertToStudlyCaps($string));
+  }
+
 }

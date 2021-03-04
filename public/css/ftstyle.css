@@ -1,20 +1,20 @@
 footer {
-  background: #ffe8ce;
-  color: #aaa;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+	background: #ffe8ce;
+	color: #aaa;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 }
 
 footer .copyright {
-  font-family: "Exo 2", sans-serif;
-  padding: 15px 0;
-  background: #333;
-  margin-top: 20px;
-  font-size: 15px;
+	font-family: "Exo 2", sans-serif;
+	padding: 15px 0;
+	background: #333;
+	margin-top: 20px;
+	font-size: 15px;
 }
 
 footer .copyright span {
-  color: #f3be81;
+	color: #f3be81;
 }

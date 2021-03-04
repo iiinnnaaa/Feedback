@@ -2,7 +2,10 @@
 
 namespace Core\Validator;
 
-Interface ValInterface{
+interface ValInterface {
+
   public function __construct($value, $name);
+
   public function validate();
+
 }

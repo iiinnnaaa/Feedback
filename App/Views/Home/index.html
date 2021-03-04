@@ -9,28 +9,29 @@
 	<section id="feedback">
 		<h1>Send Feedback</h1>
 
-<form action="/messages/add" method="POST">
-	<div class="field name-box">
-		<input type="text"  id="name" name="firstname" placeholder="Insert your first name" minlength="3" Required>
-		<label for="name">First</label>
-	</div>
+		<form action="/messages/add" method="POST">
+			<div class="field name-box">
+				<input Required id="name" minlength="3" name="firstname" placeholder="Insert your first name" type="text">
+				<label for="name">First</label>
+			</div>
 
-	<div class="field name-box">
-		<input type="text"  id="name" name="lastname" placeholder="Insert your last name" minlength="3" Required>
-		<label for="name">Last</label>
-	</div>
+			<div class="field name-box">
+				<input Required id="name" minlength="3" name="lastname" placeholder="Insert your last name" type="text">
+				<label for="name">Last</label>
+			</div>
 
-	<div class="field email-box">
-		<input type="text" id="email" name="email" placeholder="Your E-mail" Required/>
-		<label for="email">E-mail</label>
-	</div>
+			<div class="field email-box">
+				<input Required id="email" name="email" placeholder="Your E-mail" type="text"/>
+				<label for="email">E-mail</label>
+			</div>
 
-	<div class="field msg-box">
-		<textarea id="msg" name="feedback" rows="4" placeholder="Write your opinion..." minlength="3" Required/></textarea>
-		<label for="msg">Feedback</label>
-	</div>
+			<div class="field msg-box">
+				<textarea Required id="msg" minlength="3" name="feedback" placeholder="Write your opinion..."
+				          rows="4"/></textarea>
+				<label for="msg">Feedback</label>
+			</div>
 
-	<input class="button" type="submit"  name="add"  value="Send" />
+			<input class="button" name="add" type="submit" value="Send"/>
 
 		</form>
 	</section>

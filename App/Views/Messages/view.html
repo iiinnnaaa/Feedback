@@ -8,18 +8,18 @@
 
 <div class="block-card">
 
-  <div class="cont-card">
+	<div class="cont-card">
 
-    <h5>ID {{ item['id'] }} </h5>
-    <h4>{{ item.firstname }} {{ item.lastname }}</h4>
-    <span class="e-author">Author: {{ item.email }}</span>
-    <p>{{ item.message }}</p>
-   
-    <div class="back">
- 	 <a href="/messages/index">Back</a>
+		<h5>ID {{ item['id'] }} </h5>
+		<h4>{{ item.firstname }} {{ item.lastname }}</h4>
+		<span class="e-author">Author: {{ item.email }}</span>
+		<p>{{ item.message }}</p>
+
+		<div class="back">
+			<a href="/messages/index">Back</a>
+		</div>
+		<div class="s-date"><span>Sent at {{ item.sent_at }}</span></div>
 	</div>
-    <div class="s-date"><span>Sent at {{ item.sent_at }}</span></div>
-  </div>
 </div>
 
 {% endblock %}

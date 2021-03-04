@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Models;
 
+use Core\Model;
 use PDO;
+use PDOException;
 
-class Message extends \Core\Model {
+class Message extends Model {
 
   public static function getAll() {
 
@@ -16,12 +19,12 @@ class Message extends \Core\Model {
 
       return $result;
 
-    } catch (\PDOException $e){
+    } catch (PDOException $e) {
       echo $e->getMessage();
     }
   }
 
-  public static function getItem($id){
+  public static function getItem($id) {
     $db = static::getDB();
 
     $item = $db->query("SELECT `id`, `firstname`, `lastname`, `email`, `message`, `sent_at` FROM `messages` WHERE `id` = $id");
@@ -30,4 +33,5 @@ class Message extends \Core\Model {
 
     return $res;
   }
+
 }
