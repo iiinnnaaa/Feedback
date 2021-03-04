@@ -1,7 +1,12 @@
 {
-  "admin1": "admin@gmail.com",
-  "password": "admin",
+  "admin 1":{
+    "username": "admin@gmail.com",
+    "password": "admin"
+  },
 
-  "admin2": "admin2@gmail.com",
-  "password": "admin2"
+  "admin 2": {
+    "username": "admin2@gmail.com",
+    "password": "admin2"
+  }
 }
+ 
