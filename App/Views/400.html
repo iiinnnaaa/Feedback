@@ -39,8 +39,8 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
 	Swal.fire({
-		title: 'Please fill all fields',
-		text: "Please pay attention if your email filled correctly",
+		title: '{{ errormessage|capitalize }}',
+		text: "Please try again.",
 		icon: 'warning',
 		showConfirmButton: true,
 		confirmButtonColor: '#f3be81',

@@ -5,7 +5,7 @@ namespace Core\Validator\Rules;
 use Core\Validator\ValInterface;
 use Exception;
 
-class Email implements ValInterface {
+class Text implements ValInterface {
 
   protected $value, $name;
 
@@ -15,8 +15,8 @@ class Email implements ValInterface {
   }
 
   public function validate() {
-    if (!filter_var($this->value, FILTER_VALIDATE_EMAIL)) {
-      throw new Exception("$this->name filed is not a valid email", 400);
+    if ( preg_match('/[^A-Za-z.#\\-$]/',$this->value)) {
+      throw new Exception("$this->name filed is not valid string", 400);
     }
     return '';
   }

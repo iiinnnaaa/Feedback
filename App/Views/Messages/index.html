@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css?family=Cuprum|Roboto&display=swap" rel="stylesheet">
 
 {% if session.email is defined%}
-{% if session.password is defined%}
 <div class="wrapper">
 	{% for message in messages %}
 	<div class="ufive-card">
@@ -16,7 +15,7 @@
 			<input name="id" type="hidden" value="{{ message.id }}">
 			<div class="u5-card">
 				<div class="u5-text"><span>Feedbacks</span></div>
-				<h5 id="id"> ID {{ message.id }}</h5>
+				<h5 id="id"> N {{ message.id }}</h5>
 				<div class="u5-line"></div>
 				<h4>{{ message.firstname }} {{ message.lastname }}</h4>
 				<span class="u5-author">{{ message.email }}</span>
@@ -66,7 +65,7 @@
 
 	<div id="space"></div>
 </div>
-{% endif %}
+
 {% else %}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">

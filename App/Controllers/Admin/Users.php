@@ -21,19 +21,22 @@ class Users extends Controller {
       $login = $_POST['admin'];
       $password = $_POST['password'];
 
-      if ($login == $admin['email'] && password_verify($password, $admin['password'])) {
-
-        $_SESSION['email'] = $login;
-        $_SESSION['password'] = $password;
-
-        header("Location: /messages/index");
+      if(!$admin){
+        throw new Exception("Wrong login, please try again", 400);
       }
-      else {
-        throw new Exception("Wrong login or password, please try again");
+      else{
+        if ($login == $admin['email'] && password_verify($password, $admin['password'])) {
+          $_SESSION['email'] = $login;
+          header("Location: /messages/index");
+        }
+        else {
+          throw new Exception("Wrong password, please try again", 400);
+        }
       }
+
     }
     else {
-      throw new Exception("ERROR. Something went wrong");
+      throw new Exception("ERROR. Something went wrong", 400);
     }
   }
 

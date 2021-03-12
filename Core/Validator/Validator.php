@@ -3,6 +3,7 @@
 namespace Core\Validator;
 
 use Core\Validator\Rules\Email;
+use Core\Validator\Rules\Text;
 use Core\Validator\Rules\Required;
 use Core\Validator\ValStrategy;
 
@@ -18,6 +19,11 @@ class Validator {
 
       foreach ($rules as $rule) {
         $error = '';
+
+        if ($rule === 'text') {
+          $error = (
+          new ValStrategy(new Text($field['value'], $field['name'])))->validate();
+        }
 
         if ($rule === 'email') {
           $error = (
@@ -37,5 +43,4 @@ class Validator {
     }
     return $errors;
   }
-
 }

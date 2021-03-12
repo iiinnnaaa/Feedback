@@ -3,6 +3,7 @@
 namespace Core\Validator\Rules;
 
 use Core\Validator\ValInterface;
+use Exception;
 
 class Required implements ValInterface {
 
@@ -15,7 +16,7 @@ class Required implements ValInterface {
 
   public function validate() {
     if (strlen($this->value) === 0) {
-      return "$this->name field is required.";
+      throw new Exception("$this->name field is required.", 400);
     }
     return '';
   }

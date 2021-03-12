@@ -30,12 +30,12 @@ class Messages extends Controller {
         [
           "name" => "firstname",
           "value" => $firstname,
-          "rules" => "required",
+          "rules" => "text|required",
         ],
         [
           "name" => "lastname",
           "value" => $lastname,
-          "rules" => "required",
+          "rules" => "text|required",
         ],
         [
           "name" => "email",
@@ -51,6 +51,7 @@ class Messages extends Controller {
 
       $errors = Validator::validate($request);
 
+
       if (!$errors) {
         $insert = $database->query("INSERT INTO `messages`( `firstname`, `lastname`, `email`, `message`)
                                        VALUES ('$firstname', '$lastname', '$email', '$message')");
@@ -63,7 +64,7 @@ class Messages extends Controller {
         }
       }
       else {
-        throw new Exception("Please fill required fileds", 400);
+        throw new Exception("Please fill required fields", 400);
       }
     }
   }
@@ -78,7 +79,6 @@ class Messages extends Controller {
 
     if ($delete) {
       View::renderTemplate('Messages/delete.html', ['messages' => $messages]);
-
     }
     else {
       throw new Exception("Deleted Failed. Try again.");
@@ -88,6 +88,7 @@ class Messages extends Controller {
 
   public function viewAction() {
     $database = Model::getDB();
+    $messages = Message::getAll();
 
     if (isset($_POST['view'])) {
       $id = $_POST['id'];

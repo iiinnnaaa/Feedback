@@ -6,7 +6,7 @@ use ErrorException;
 
 class Error {
 
-  const SHOW_ERRORS = FALSE;
+  const SHOW_ERRORS = false;
 
   public static function errorHandler($level, $message, $file, $line) {
     if (error_reporting() !== 0) {
@@ -34,6 +34,9 @@ class Error {
       echo "<p>Thrown in '" . $exception->getFile() . "' on line " . $exception->getLine() . "</p>";
     }
     else {
+
+      $errormessage=$exception->getMessage();
+
       $log = dirname(__DIR__) . '/logs/' . date('Y-m-d H-i') . '.txt';
       ini_set('error_log', $log);
 
@@ -41,7 +44,7 @@ class Error {
         . "\nThrown in" . $exception->getFile() . " on line " . $exception->getLine();
 
       error_log($message);
-      View::renderTemplate("$code.html");
+      View::renderTemplate("$code.html",['errormessage'=>$errormessage]);
     }
   }
 

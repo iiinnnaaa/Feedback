@@ -24,7 +24,6 @@
 </script>
 
 {% if session.email is defined%}
-{% if session.password is defined%}
 <div class="wrapper">
 	{% for message in messages %}
 	<div class="ufive-card">
@@ -57,7 +56,6 @@
 
 	<div id="space"></div>
 </div>
-{% endif %}
 {% else %}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">

@@ -1,0 +1,37 @@
+[12-Mar-2021 14:03:34 UTC] Uncaught exception: 'Twig\Error\SyntaxError' with message ' Unexpected token "end of print statement" of value "".'
+Stack trace: #0 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#1 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#2 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(163): Twig\ExpressionParser->parseExpression(500)
+#3 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#4 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(83): Twig\ExpressionParser->parseExpression(31)
+#5 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Parser.php(128): Twig\ExpressionParser->parseExpression()
+#6 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\TokenParser\IfTokenParser.php(41): Twig\Parser->subparse(Array)
+#7 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Parser.php(171): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#8 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\TokenParser\ForTokenParser.php(42): Twig\Parser->subparse(Array)
+#9 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Parser.php(171): Twig\TokenParser\ForTokenParser->parse(Object(Twig\Token))
+#10 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\TokenParser\IfTokenParser.php(41): Twig\Parser->subparse(Array)
+#11 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Parser.php(171): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#12 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\TokenParser\BlockTokenParser.php(47): Twig\Parser->subparse(Array, true)
+#13 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Parser.php(171): Twig\TokenParser\BlockTokenParser->parse(Object(Twig\Token))
+#14 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Parser.php(84): Twig\Parser->subparse(NULL, false)
+#15 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(479): Twig\Parser->parse(Object(Twig\TokenStream))
+#16 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(507): Twig\Environment->parse(Object(Twig\TokenStream))
+#17 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(348): Twig\Environment->compileSource(Object(Twig\Source))
+#18 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(309): Twig\Environment->loadTemplate('__TwigTemplate_...', 'Messages/index....')
+#19 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('Messages/index....')
+#20 C:\MAMP\htdocs\feedback\Core\View.php(37): Twig\Environment->render('Messages/index....', Array)
+#21 C:\MAMP\htdocs\feedback\App\Controllers\Messages.php(17): Core\View::renderTemplate('Messages/index....', Array)
+#22 [internal function]: App\Controllers\Messages->indexAction()
+#23 C:\MAMP\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#24 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('index', Array)
+#25 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/index')
+#26 {main}
+Thrown inC:\MAMP\htdocs\feedback\App\Views\Messages\index.html on line 21
+[12-Mar-2021 14:03:34 UTC] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Router.php on line 83
+[12-Mar-2021 14:03:42 UTC] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Router.php on line 83

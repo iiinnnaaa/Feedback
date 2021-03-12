@@ -1,0 +1,12 @@
+[12-Mar-2021 14:12:18 UTC] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Router.php on line 83
+[12-Mar-2021 14:12:36 UTC] Uncaught exception: 'ErrorException' with message ' Trying to access array offset on value of type bool'
+Stack trace: #0 C:\MAMP\htdocs\feedback\App\Controllers\Admin\Users.php(24): Core\Error::errorHandler(8, 'Trying to acces...', 'C:\\MAMP\\htdocs\\...', 24, Array)
+#1 [internal function]: App\Controllers\Admin\Users->loginAction()
+#2 C:\MAMP\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#3 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('login', Array)
+#4 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('admin/users/log...')
+#5 {main}
+Thrown inC:\MAMP\htdocs\feedback\App\Controllers\Admin\Users.php on line 24
