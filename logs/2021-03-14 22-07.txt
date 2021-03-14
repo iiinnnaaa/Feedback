@@ -1,0 +1,63 @@
+[14-Mar-2021 22:07:04 Europe/Berlin] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\xampp\htdocs\feedback\Core\Router.php on line 83
+[14-Mar-2021 22:07:11 Europe/Berlin] Uncaught exception: 'Exception' with message ' Wrong login, please try again'
+Stack trace: #0 [internal function]: App\Controllers\Admin\Users->loginAction()
+#1 C:\xampp\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('login', Array)
+#3 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('admin/users/log...')
+#4 {main}
+Thrown inC:\xampp\htdocs\feedback\App\Controllers\Admin\Users.php on line 25
+[14-Mar-2021 22:07:11 Europe/Berlin] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unknown "isCurrentPath" function. in C:\xampp\htdocs\feedback\App\Views\400.html:8
+Stack trace:
+#0 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(455): Twig\ExpressionParser->getFunctionNodeClass('isCurrentPath', 8)
+#1 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(235): Twig\ExpressionParser->getFunctionNode('isCurrentPath', 8)
+#2 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#3 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#4 C:\xampp\htdocs\feedback\vendor\twig\twig\src\TokenParser\IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#5 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Parser.php(171): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#6 C:\xampp\htdocs\feedback\vendor\twig\twig\src\TokenParser\BlockTokenParser.php(47): Twig\Parser->subparse(Array, true)
+#7 C:\xampp\ht in C:\xampp\htdocs\feedback\App\Views\400.html on line 8
+[14-Mar-2021 22:07:41 Europe/Berlin] Uncaught exception: 'Exception' with message ' Wrong login, please try again'
+Stack trace: #0 [internal function]: App\Controllers\Admin\Users->loginAction()
+#1 C:\xampp\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('login', Array)
+#3 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('admin/users/log...')
+#4 {main}
+Thrown inC:\xampp\htdocs\feedback\App\Controllers\Admin\Users.php on line 25
+[14-Mar-2021 22:07:41 Europe/Berlin] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unknown "isCurrentPath" function. in C:\xampp\htdocs\feedback\App\Views\400.html:8
+Stack trace:
+#0 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(455): Twig\ExpressionParser->getFunctionNodeClass('isCurrentPath', 8)
+#1 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(235): Twig\ExpressionParser->getFunctionNode('isCurrentPath', 8)
+#2 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#3 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#4 C:\xampp\htdocs\feedback\vendor\twig\twig\src\TokenParser\IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#5 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Parser.php(171): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#6 C:\xampp\htdocs\feedback\vendor\twig\twig\src\TokenParser\BlockTokenParser.php(47): Twig\Parser->subparse(Array, true)
+#7 C:\xampp\ht in C:\xampp\htdocs\feedback\App\Views\400.html on line 8
+[14-Mar-2021 22:07:41 Europe/Berlin] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\xampp\htdocs\feedback\Core\Router.php on line 83
+[14-Mar-2021 22:07:45 Europe/Berlin] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\xampp\htdocs\feedback\Core\Router.php on line 83
+[14-Mar-2021 22:07:52 Europe/Berlin] Uncaught exception: 'Exception' with message ' Wrong login, please try again'
+Stack trace: #0 [internal function]: App\Controllers\Admin\Users->loginAction()
+#1 C:\xampp\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('login', Array)
+#3 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('admin/users/log...')
+#4 {main}
+Thrown inC:\xampp\htdocs\feedback\App\Controllers\Admin\Users.php on line 25
+[14-Mar-2021 22:07:52 Europe/Berlin] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unknown "isCurrentPath" function. in C:\xampp\htdocs\feedback\App\Views\400.html:8
+Stack trace:
+#0 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(455): Twig\ExpressionParser->getFunctionNodeClass('isCurrentPath', 8)
+#1 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(235): Twig\ExpressionParser->getFunctionNode('isCurrentPath', 8)
+#2 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(175): Twig\ExpressionParser->parsePrimaryExpression()
+#3 C:\xampp\htdocs\feedback\vendor\twig\twig\src\ExpressionParser.php(70): Twig\ExpressionParser->getPrimary()
+#4 C:\xampp\htdocs\feedback\vendor\twig\twig\src\TokenParser\IfTokenParser.php(38): Twig\ExpressionParser->parseExpression()
+#5 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Parser.php(171): Twig\TokenParser\IfTokenParser->parse(Object(Twig\Token))
+#6 C:\xampp\htdocs\feedback\vendor\twig\twig\src\TokenParser\BlockTokenParser.php(47): Twig\Parser->subparse(Array, true)
+#7 C:\xampp\ht in C:\xampp\htdocs\feedback\App\Views\400.html on line 8

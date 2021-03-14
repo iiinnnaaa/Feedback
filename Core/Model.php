@@ -11,7 +11,7 @@ class Model {
     $host = 'localhost';
     $dbname = 'feedback';
     $username = 'root';
-    $password = 'root';
+    $password = '';
 
     static $db = NULL;
 

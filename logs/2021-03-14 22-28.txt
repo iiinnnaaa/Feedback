@@ -1,0 +1,33 @@
+[14-Mar-2021 22:28:37 Europe/Berlin] Uncaught exception: 'Twig\Error\RuntimeError' with message ' An exception has been thrown during the rendering of a template ("Array to string conversion").'
+Stack trace: #0 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(358) : eval()'d code(109): Twig\Template->displayBlock('body', Array, Array)
+#1 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Template.php(394): __TwigTemplate_f71492a3820f08a8e5a58f5e11db588828a41950010d0605ce66e38ab21342e9->doDisplay(Array, Array)
+#2 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Template.php(367): Twig\Template->displayWithErrorHandling(Array, Array)
+#3 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(358) : eval()'d code(43): Twig\Template->display(Array, Array)
+#4 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Template.php(394): __TwigTemplate_a277b2a5072c40aee459398d216616174e4830dc6b7324452f790e70c28ccf21->doDisplay(Array, Array)
+#5 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Template.php(367): Twig\Template->displayWithErrorHandling(Array, Array)
+#6 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Template.php(379): Twig\Template->display(Array)
+#7 C:\xampp\htdocs\feedback\vendor\twig\twig\src\TemplateWrapper.php(40): Twig\Template->render(Array, Array)
+#8 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(277): Twig\TemplateWrapper->render(Array)
+#9 C:\xampp\htdocs\feedback\Core\View.php(37): Twig\Environment->render('Messages/index....', Array)
+#10 C:\xampp\htdocs\feedback\App\Controllers\Messages.php(17): Core\View::renderTemplate('Messages/index....', Array)
+#11 [internal function]: App\Controllers\Messages->indexAction()
+#12 C:\xampp\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#13 C:\xampp\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('index', Array)
+#14 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/index')
+#15 {main}
+Thrown inC:\xampp\htdocs\feedback\App\Views\Messages\index.html on line 20
+[14-Mar-2021 22:28:37 Europe/Berlin] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "0.html" (looked into: ../App/Views). in C:\xampp\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php:227
+Stack trace:
+#0 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('0.html')
+#1 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('0.html')
+#2 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('0.html')
+#3 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('0.html')
+#4 C:\xampp\htdocs\feedback\Core\View.php(37): Twig\Environment->render('0.html', Array)
+#5 C:\xampp\htdocs\feedback\Core\Error.php(49): Core\View::renderTemplate('0.html', Array)
+#6 [internal function]: Core\Error::exceptionHandler(Object(Twig\Error\RuntimeError))
+#7 {main}
+  thrown in C:\xampp\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 227
+[14-Mar-2021 22:28:54 Europe/Berlin] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\xampp\htdocs\feedback\Core\Router.php on line 83

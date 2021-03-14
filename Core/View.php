@@ -27,7 +27,6 @@ class View {
   public static function renderTemplate($template, $args = []) {
     static $twig = NULL;
 
-
     if ($twig === NULL) {
       $loader = new FilesystemLoader('../App/Views');
       $twig = new Environment($loader);

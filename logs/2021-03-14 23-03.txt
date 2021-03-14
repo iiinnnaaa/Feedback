@@ -1,0 +1,23 @@
+[14-Mar-2021 23:03:16 Europe/Berlin] Uncaught exception: 'ErrorException' with message ' Undefined index: id'
+Stack trace: #0 C:\xampp\htdocs\feedback\App\Controllers\Messages.php(78): Core\Error::errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 78, Array)
+#1 [internal function]: App\Controllers\Messages->deleteAction()
+#2 C:\xampp\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('delete', Array)
+#4 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/delete')
+#5 {main}
+Thrown inC:\xampp\htdocs\feedback\App\Controllers\Messages.php on line 78
+[14-Mar-2021 23:03:16 Europe/Berlin] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "0.html" (looked into: ../App/Views). in C:\xampp\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php:227
+Stack trace:
+#0 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('0.html')
+#1 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('0.html')
+#2 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('0.html')
+#3 C:\xampp\htdocs\feedback\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('0.html')
+#4 C:\xampp\htdocs\feedback\Core\View.php(37): Twig\Environment->render('0.html', Array)
+#5 C:\xampp\htdocs\feedback\Core\Error.php(49): Core\View::renderTemplate('0.html', Array)
+#6 [internal function]: Core\Error::exceptionHandler(Object(ErrorException))
+#7 {main}
+  thrown in C:\xampp\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 227
+[14-Mar-2021 23:03:16 Europe/Berlin] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\xampp\htdocs\feedback\Core\Router.php on line 83

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} Message {{ item['id'] }} {% endblock %}
+{% block title %} Message {{ item.id }} {% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
 
 	<div class="cont-card">
 
-		<h5>ID {{ item['id'] }} </h5>
+		<h5>ID {{ item.id }} </h5>
 		<h4>{{ item.firstname }} {{ item.lastname }}</h4>
 		<span class="e-author">Author: {{ item.email }}</span>
 		<p>{{ item.message }}</p>

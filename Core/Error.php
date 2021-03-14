@@ -20,7 +20,9 @@ class Error {
     $code = $exception->getCode();
     if ($code != 404) {
       if ($code != 400) {
-        $code = 500;
+        if($code != 401){
+          $code == 500;
+        }
       }
     }
 

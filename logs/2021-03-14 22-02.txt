@@ -1,0 +1,10 @@
+[14-Mar-2021 22:02:12 Europe/Berlin] Uncaught exception: 'Exception' with message ' firstname filed is not valid string'
+Stack trace: #0 C:\xampp\htdocs\feedback\Core\Validator\ValStrategy.php(16): Core\Validator\Rules\Text->validate()
+#1 C:\xampp\htdocs\feedback\Core\Validator\Validator.php(25): Core\Validator\ValStrategy->validate()
+#2 C:\xampp\htdocs\feedback\App\Controllers\Messages.php(52): Core\Validator\Validator::validate(Array)
+#3 [internal function]: App\Controllers\Messages->addAction()
+#4 C:\xampp\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('add', Array)
+#6 C:\xampp\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/add')
+#7 {main}
+Thrown inC:\xampp\htdocs\feedback\Core\Validator\Rules\Text.php on line 19

@@ -22,7 +22,7 @@ class Users extends Controller {
       $password = $_POST['password'];
 
       if(!$admin){
-        throw new Exception("Wrong login, please try again", 400);
+        throw new Exception("Wrong login, please try again", 401);
       }
       else{
         if ($login == $admin['email'] && password_verify($password, $admin['password'])) {
@@ -30,13 +30,13 @@ class Users extends Controller {
           header("Location: /messages/index");
         }
         else {
-          throw new Exception("Wrong password, please try again", 400);
+          throw new Exception("Wrong password, please try again", 401);
         }
       }
 
     }
     else {
-      throw new Exception("ERROR. Something went wrong", 400);
+      throw new Exception("ERROR. Something went wrong", 401);
     }
   }
 
@@ -48,7 +48,7 @@ class Users extends Controller {
       header("Location: /");
     }
     else {
-      throw new Exception("Logout failed. Try again.");
+      throw new Exception("Logout failed. Try again.", 401);
     }
   }
 
