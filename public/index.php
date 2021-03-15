@@ -18,3 +18,4 @@ $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 
 
 $router->dispatch($_SERVER['QUERY_STRING']);
+

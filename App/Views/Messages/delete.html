@@ -27,12 +27,12 @@
 <div class="wrapper">
 	{% for message in messages %}
 	<div class="ufive-card">
-
 		<form action="/messages/delete" method="POST">
 			<input name="id" type="hidden" value="{{ message.id }}">
 			<div class="u5-card">
-				<div class="u5-text"><span>Feedbacks</span></div>
-				<h5 id="id"> ID {{ message.id }}</h5>
+				<div class="u5-text"><span>Feedbacks</span></div>s
+<!--				<h5 id="id"> ID {{ message.id }}</h5>-->
+				<h5 id="id">&#x2116; {{ loop.index }}</h5>
 				<div class="u5-line"></div>
 				<h4>{{ message.firstname }} {{ message.lastname }}</h4>
 				<span class="u5-author">{{ message.email }}</span>

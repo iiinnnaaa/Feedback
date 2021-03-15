@@ -6,7 +6,7 @@ use ErrorException;
 
 class Error {
 
-  const SHOW_ERRORS = false;
+  const SHOW_ERRORS = FALSE;
 
   public static function errorHandler($level, $message, $file, $line) {
     if (error_reporting() !== 0) {
@@ -21,7 +21,7 @@ class Error {
     if ($code != 404) {
       if ($code != 400) {
         if($code != 401){
-          $code == 500;
+          $code = 500;
         }
       }
     }

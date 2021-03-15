@@ -1,0 +1,24 @@
+[15-Mar-2021 10:28:16 UTC] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Router.php on line 83
+[15-Mar-2021 10:28:31 UTC] Uncaught exception: 'PDOException' with message ' SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)'
+Stack trace: #0 C:\MAMP\htdocs\feedback\Core\Model.php(20): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 C:\MAMP\htdocs\feedback\App\Controllers\Messages.php(26): Core\Model::getDB()
+#2 [internal function]: App\Controllers\Messages->addAction()
+#3 C:\MAMP\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#4 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('add', Array)
+#5 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/add')
+#6 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Model.php on line 20
+[15-Mar-2021 10:28:31 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "1045.html" (looked into: ../App/Views). in C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php:227
+Stack trace:
+#0 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('1045.html')
+#1 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('1045.html')
+#2 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('1045.html')
+#3 C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('1045.html')
+#4 C:\MAMP\htdocs\feedback\Core\View.php(36): Twig\Environment->render('1045.html', Array)
+#5 C:\MAMP\htdocs\feedback\Core\Error.php(49): Core\View::renderTemplate('1045.html', Array)
+#6 [internal function]: Core\Error::exceptionHandler(Object(PDOException))
+#7 {main}
+  thrown in C:\MAMP\htdocs\feedback\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 227

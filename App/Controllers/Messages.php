@@ -19,9 +19,9 @@ class Messages extends Controller {
 
   public function addAction() {
 
-    if($_SERVER['REQUEST_URI'] == "/messages/add"){
-      View::renderTemplate('Home/index.html');
-    }
+//    if($_SERVER['REQUEST_URI'] == "/messages/add"){
+//      View::renderTemplate('Home/index.html');
+//    }
 
     $database = Model::getDB();
 
@@ -88,7 +88,7 @@ class Messages extends Controller {
       View::renderTemplate('Messages/delete.html', ['messages' => $messages]);
     }
     else {
-      throw new Exception("Deleted Failed. Try again.");
+      throw new Exception("Deleted Failed. Try again.", 500);
     }
 
   }
