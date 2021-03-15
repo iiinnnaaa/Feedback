@@ -1,0 +1,44 @@
+[15-Mar-2021 11:20:02 UTC] Uncaught exception: 'ErrorException' with message ' Undefined index: id'
+Stack trace: #0 C:\MAMP\htdocs\feedback\App\Controllers\Messages.php(83): Core\Error::errorHandler(8, 'Undefined index...', 'C:\\MAMP\\htdocs\\...', 83, Array)
+#1 [internal function]: App\Controllers\Messages->deleteAction()
+#2 C:\MAMP\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#3 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('delete', Array)
+#4 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/delete')
+#5 {main}
+Thrown inC:\MAMP\htdocs\feedback\App\Controllers\Messages.php on line 83
+[15-Mar-2021 11:20:05 UTC] Uncaught exception: 'ErrorException' with message ' Undefined index: id'
+Stack trace: #0 C:\MAMP\htdocs\feedback\App\Controllers\Messages.php(83): Core\Error::errorHandler(8, 'Undefined index...', 'C:\\MAMP\\htdocs\\...', 83, Array)
+#1 [internal function]: App\Controllers\Messages->deleteAction()
+#2 C:\MAMP\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#3 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('delete', Array)
+#4 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/delete')
+#5 {main}
+Thrown inC:\MAMP\htdocs\feedback\App\Controllers\Messages.php on line 83
+[15-Mar-2021 11:20:06 UTC] Uncaught exception: 'Exception' with message ' Method deleteAction not found in controllerApp\Controllers\Home'
+Stack trace: #0 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('delete', Array)
+#1 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('home/delete')
+#2 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Controller.php on line 27
+[15-Mar-2021 11:20:06 UTC] Uncaught exception: 'Exception' with message ' Method delAction not found in controllerApp\Controllers\Home'
+Stack trace: #0 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('del', Array)
+#1 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('home/del')
+#2 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Controller.php on line 27
+[15-Mar-2021 11:20:08 UTC] Uncaught exception: 'Exception' with message ' Method indezAction not found in controllerApp\Controllers\Messages'
+Stack trace: #0 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('indez', Array)
+#1 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/indez')
+#2 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Controller.php on line 27
+[15-Mar-2021 11:20:10 UTC] Uncaught exception: 'Exception' with message ' Method delAction not found in controllerApp\Controllers\Home'
+Stack trace: #0 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('del', Array)
+#1 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('home/del')
+#2 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Controller.php on line 27
+[15-Mar-2021 11:20:26 UTC] Uncaught exception: 'ErrorException' with message ' Undefined index: id'
+Stack trace: #0 C:\MAMP\htdocs\feedback\App\Controllers\Messages.php(83): Core\Error::errorHandler(8, 'Undefined index...', 'C:\\MAMP\\htdocs\\...', 83, Array)
+#1 [internal function]: App\Controllers\Messages->deleteAction()
+#2 C:\MAMP\htdocs\feedback\Core\Controller.php(22): call_user_func_array(Array, Array)
+#3 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('delete', Array)
+#4 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/delete')
+#5 {main}
+Thrown inC:\MAMP\htdocs\feedback\App\Controllers\Messages.php on line 83

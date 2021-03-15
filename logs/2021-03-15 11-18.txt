@@ -1,0 +1,14 @@
+[15-Mar-2021 11:18:28 UTC] Uncaught exception: 'Exception' with message ' No route matched'
+Stack trace: #0 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Router.php on line 83
+[15-Mar-2021 11:18:52 UTC] Uncaught exception: 'Exception' with message ' Method indezAction not found in controllerApp\Controllers\Messages'
+Stack trace: #0 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('indez', Array)
+#1 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/indez')
+#2 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Controller.php on line 27
+[15-Mar-2021 11:18:53 UTC] Uncaught exception: 'Exception' with message ' Method indezAction not found in controllerApp\Controllers\Messages'
+Stack trace: #0 C:\MAMP\htdocs\feedback\Core\Router.php(72): Core\Controller->__call('indez', Array)
+#1 C:\MAMP\htdocs\feedback\public\index.php(20): Core\Router->dispatch('messages/indez')
+#2 {main}
+Thrown inC:\MAMP\htdocs\feedback\Core\Controller.php on line 27

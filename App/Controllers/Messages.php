@@ -18,11 +18,6 @@ class Messages extends Controller {
   }
 
   public function addAction() {
-
-//    if($_SERVER['REQUEST_URI'] == "/messages/add"){
-//      View::renderTemplate('Home/index.html');
-//    }
-
     $database = Model::getDB();
 
     if (isset($_POST['add'])) {
@@ -71,6 +66,10 @@ class Messages extends Controller {
       else {
         throw new Exception("Please fill required fields", 400);
       }
+    }
+
+    else{
+      throw new Exception("Please fill required fields", 500);
     }
   }
 
