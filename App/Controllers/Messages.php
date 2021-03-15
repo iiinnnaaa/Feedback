@@ -69,7 +69,7 @@ class Messages extends Controller {
     }
 
     else{
-      throw new Exception("Please fill required fields", 500);
+      throw new Exception("Error something went wrong", 500);
     }
   }
 
